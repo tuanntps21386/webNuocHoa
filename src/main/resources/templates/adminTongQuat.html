@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+         <!-- PAGE  -->
+    <div class="">
+      <div class="main-content container-fluid">
+        <main class="app-content">
+          <div class="row">
+            <div class="col-md-12 col-lg-12">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="widget-small primary coloured-icon">
+                    <div class="icon">
+                      <i class="fa-solid fa-users fa-5x"></i>
+                    </div>
+                    <div class="info">
+                      <h4>Tổng khách hàng</h4>
+                      <p th:text="${customerCount}"></p><b> khách hàng</b>
+                      <p class="info-tong">Tổng số khách hàng được quản lý.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="widget-small info coloured-icon">
+                    <div class="icon">
+                      <i class="fa-brands fa-product-hunt fa-5x"></i>
+                    </div>
+                    <div class="info">
+                      <h4>Tổng sản phẩm</h4>
+                      <p th:text="${products}"></p><b> sản phẩm</b>
+                      <p class="info-tong">Tổng số sản phẩm được quản lý.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="widget-small warning coloured-icon">
+                    <div class="icon">
+                      <i class="fa-solid fa-bag-shopping fa-5x"></i>
+                    </div>
+                    <div class="info">
+                      <h4>Tổng đơn hàng</h4>
+                      <p th:text="${orderCount}"></p><b>đơn hàng</b>
+                      <p class="info-tong">Tổng số hóa đơn bán hàng trong tháng.</p>
+                    </div>
+                  </div>
+                </div>
+                
+
+                <!-- BIỂU ĐỒ  -->
+                
+                <div class="col-md-12">
+                  <div class="tile">
+                    <h3 class="tile-title">Top 10 sản phẩm bán chạy nhất</h3>
+                    <div>
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Mã sản phẩm</th>
+                			<th>Tên sản phẩm</th>
+                			<th>Tổng số lượng đã bán</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr th:each="product : ${topProducts}">
+                			<td th:text="${product[0]}"></td>
+                			<td th:text="${product[1]}"></td>
+                			<td th:text="${product[2]}"></td>
+            			</tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- / div trống-->
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+     
+</body>
+
+</html>

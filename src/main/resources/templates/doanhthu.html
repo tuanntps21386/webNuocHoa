@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+<main>
+         <!-- PAGE  -->
+    <div class="mx-5">
+      <div class="main-content container-fluid">
+        <main class="app-content">
+          <div class="row">
+            <div class="col-md-12 col-lg-12">
+              <div class="row">       
+                <div class="col-md-12">
+                  <div class="tile">
+                    <h3 class="tile-title">Thống kê doanh thu</h3>
+                    
+                    <form th:action="@{/doanhthu}" method="get">
+        <label for="nam">Năm:</label>
+        <input type="text" id="nam" name="nam" />
+
+        <label for="thang">Tháng:</label>
+        <input type="text" id="thang" name="thang" />
+
+        <label for="ngay">Ngày:</label>
+        <input type="text" id="ngay" name="ngay" />
+
+        <button type="submit">Tìm kiếm</button>
+    </form>
+                    
+                    <div>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Năm</th>
+                            <th>Tháng</th>
+                            <th>Ngày</th>
+                            <th>Doanh thu</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr th:each="doanhThuTheoThang : ${doanhThuTheoThangs}">
+                			<td th:text="${doanhThuTheoThang.nam}"></td>
+                			<td th:text="${doanhThuTheoThang.thang}"></td>
+                			<td th:text="${doanhThuTheoThang.ngay}"></td>
+                			<td th:text="${doanhThuTheoThang.doanhThu}"></td>
+                			
+            			</tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+</main>    
+</body>
+
+</html>

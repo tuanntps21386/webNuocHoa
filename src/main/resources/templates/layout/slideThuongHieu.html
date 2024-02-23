@@ -1,0 +1,55 @@
+<div th:fragment="slideThuongHieu">
+	<section class="section_category">
+		<div class="container section_category_container">
+			<h2 class="title-module">
+				<a href>Thương hiệu</a>
+			</h2>
+			<div class="product-cate-swiper swiper-container">
+				<div class="swiper-wrapper">
+					<div class="container text-center my-3">
+						<div class="row mx-auto my-auto justify-content-center">
+							<div id="recipeCarousel" class="carousel slide"
+								data-bs-ride="carousel">
+								<div class="carousel-inner " role="listbox">
+									<div class="carousel-item active" th:each="brand : ${brand_items}">
+										<div class="col-md-3">
+											<div class="card">
+												<a href="#" title="Afnan">
+													<div class="image">
+														<img width="100" height="100" class="lazyload"
+															th:src="@{|/img/thuonghieu/${brand.photo}|}" alt="Afnan">
+													</div>
+												</a>
+											</div>
+										</div>
+									</div>
+									
+									
+								</div>
+								<div class="owl-nav">
+									<div class="owl-prev">
+										<a class="carousel-control-prev bg-transparent w-aut"
+											href="#recipeCarousel" role="button" data-bs-slide="prev">
+											<span class="carousel-control-prev-icon " aria-hidden="true"></span>
+										</a>
+									</div>
+									<div class="owl-next">
+										<a class="carousel-control-next bg-transparent w-aut"
+											href="#recipeCarousel" role="button" data-bs-slide="next">
+											<span class="carousel-control-next-icon" aria-hidden="true"></span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+
+
+
+
